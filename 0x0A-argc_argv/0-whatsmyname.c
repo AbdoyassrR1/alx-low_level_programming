@@ -1,15 +1,17 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include "main.h"
 
 /**
- * mynameis -  A function that print program name, followed by a new line
- * @argc : int
- * @argv : array
- * Return: 0
+ * main - prints the name of the program
+ * @argc: number of arguments
+ * @argv: array of arguments
+ *
+ * Return: Always 0 (Success)
  */
-int mynameis(int argc, char *argv[])
+int main(int argc __attribute__((unused)), char *argv[])
 {
-	(void)argc;
-	printf("%s\n", argv[0]);
+	printf("%s\n", *argv);
+
 	return (0);
 }
+
