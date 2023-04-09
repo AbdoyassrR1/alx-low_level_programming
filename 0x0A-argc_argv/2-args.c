@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * args - a program that prints all arguments it receives.
+ * main - a program that prints all arguments it receives.
  * @argc : n of args
  * @argv : array of args
  * Return: Always 0 (Success)
