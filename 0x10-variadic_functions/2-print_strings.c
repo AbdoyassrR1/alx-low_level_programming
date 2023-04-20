@@ -6,8 +6,9 @@
  * print_strings - a function that prints strings, followed by a new line.
  * @separator: separator.
  * @n: number of args
+ * @...: strings to be printed.
  * Return: no thing
-*/
+ */
 
 void print_strings(const char *separator, const unsigned int n, ...)
 {
@@ -17,7 +18,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 	if (!n)
 	{
-		putchar('\n');
+		printf("\n");
 		return;
 	}
 	va_start(arg, n);
