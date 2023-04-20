@@ -2,23 +2,30 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-/***/
+/**
+ * print_strings - a function that prints strings, followed by a new line.
+ * @separator: separator.
+ * @n: number of args
+ * Return: no thing
+*/
 
 void print_strings(const char *separator, const unsigned int n, ...)
 {
-    va_list arg;
-	unsigned int i;
+	int i = n;
+	char *string;
+	va_list arg;
 
-	va_start(arg, n);
-
-	for (i = 0 ; i < n ; i++)
+	if (!n)
 	{
-		printf("%d", va_arg(arg, int));
-
-		if (i != (n - 1) && separator != NULL)
-
-			printf("%s", separator);
-
+		putchar('\n');
+		return;
 	}
-	printf("\n");
+	va_start(arg, n);
+	while (i--)
+	{
+		printf("%s%s", (string = va_arg(arg, char *)) ? string : "(nil)",
+		i ? (separator ? separator : "") : "\n");
+	}
+	va_end(arg);
+
 }
