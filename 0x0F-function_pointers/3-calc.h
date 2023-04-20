@@ -9,7 +9,7 @@
  */
 
 /**
- * struct op - A struct op.
+ * struct o - A struct o.
  * @o: The operator.
  * @f: The associated function.
  */
