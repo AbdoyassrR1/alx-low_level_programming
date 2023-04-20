@@ -19,7 +19,7 @@ int sum_them_all(const unsigned int n, ...)
 	}
 
 	int s = 0;
-	int i;
+	unsigned int i;
 
 	va_start(args, n);
 
