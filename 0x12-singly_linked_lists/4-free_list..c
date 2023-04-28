@@ -8,7 +8,7 @@
  */
 void free_list(list_t *head)
 {
-	list_t *node, *next_node;
+	list_t *node, *nextnode;
 
 	if (!head)
 		return;
@@ -16,9 +16,9 @@ void free_list(list_t *head)
 	node = head;
 	while (node)
 	{
-		next_node = node->next;
+		nextnode = node->next;
 		free(node->str);
 		free(node);
-		node = next_node;
+		node = nextnode;
 	}
 }
