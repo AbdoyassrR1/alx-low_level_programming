@@ -19,6 +19,6 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 
 	if (index > (count -1))
 		return (NULL);
-
-	return (ptr);
+	else
+		return (ptr);
 }
