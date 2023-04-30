@@ -9,8 +9,8 @@
 
 int pop_listint(listint_t **head)
 {
-	int data;
 	listint_t *temp;
+	int data;
 
 	if (!*head || !head)
 	{
