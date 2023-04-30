@@ -11,10 +11,10 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 	ptr = head;
 
 
-	while (ptr && count > index)
+	while (ptr && count < index)
 	{
-		count++;
 		ptr = (*ptr).next;
+		count++;
 	}
 
 	if (index > (count -1))
