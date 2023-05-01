@@ -36,7 +36,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	}
 
 	current = (*ptr).next;
-	(*ptr).next = (*current).next
+	(*ptr).next = (*current).next;
 	free(current);
 
 	return (1);
