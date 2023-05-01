@@ -20,8 +20,8 @@ int sum_listint(listint_t *head)
 
 	while (head)
 	{
-		ptr = (*ptr).next;
 		sum += (*ptr).n;
+		ptr = (*ptr).next;
 	}
 
 	return (sum);
