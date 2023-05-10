@@ -252,8 +252,8 @@ int main(int ac, char **av)
 	b = read(fd, &head, sizeof(head));
 	if (b < 1 || b != sizeof(head))
 		dprintf(STDERR_FILENO, "Can't read from file: %s\n", av[1]), exit(98);
-	if (head.e_ident[0] == 0x7f && head.e_ident[1] == 'E' && head.e_ident[2] == 'L' &&
-			head.e_ident[3] == 'F')
+	if (head.e_ident[0] == 0x7f && head.e_ident[1] == 'E' &&
+		head.e_ident[2] == 'L' && head.e_ident[3] == 'F')
 	{
 		printf("ELF Header:\n");
 	}
