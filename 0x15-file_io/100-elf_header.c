@@ -298,16 +298,16 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		exit(98);
 	}
 
-	check_elf(h->e_ident);
+	checkElf(h->e_ident);
 	printf("ELF Header:\n");
-	print_magic(h->e_ident);
-	print_class(h->e_ident);
-	print_data(h->e_ident);
-	print_version(h->e_ident);
-	print_osabi(h->e_ident);
-	print_abi(h->e_ident);
-	print_type(h->e_type, h->e_ident);
-	print_entry(h->e_entry, h->e_ident);
+	printMagic(h->e_ident);
+	print_Class(h->e_ident);
+	printData(h->e_ident);
+	printVersion(h->e_ident);
+	printOsabi(h->e_ident);
+	printAbi(h->e_ident);
+	printType(h->e_type, h->e_ident);
+	printEntry(h->e_entry, h->e_ident);
 
 	free(h);
 	close_elf(o);
