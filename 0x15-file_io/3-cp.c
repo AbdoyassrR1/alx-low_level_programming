@@ -3,7 +3,7 @@
 void closeFile(int fd);
 
 /**
- * close_file - Closes file descriptors.
+ * closeFile - Closes file descriptors.
  * @fd: The file descriptor to be closed.
  */
 void closeFile(int fd)
