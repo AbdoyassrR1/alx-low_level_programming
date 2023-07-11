@@ -76,16 +76,20 @@ int main(int argc, char *argv[])
 	while (r > 0)
 	{
 		if (file_from == -1 || r == -1)
+		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 			free(buffer);
 			exit(98);
+		}
 
 		w = write(file_to, buffer, r);
 
 		if (file_to == -1 || w == -1)
+		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			free(buffer);
 			exit(99);
+		}
 
 		r = read(file_from, buffer, 1024);
 		file_to = open(argv[2], O_WRONLY | O_APPEND);
