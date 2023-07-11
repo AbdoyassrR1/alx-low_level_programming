@@ -16,7 +16,7 @@ void printAbi(unsigned char *e_ident);
 void printOsabi(unsigned char *e_ident);
 void printType(unsigned int e_type, unsigned char *e_ident);
 void printEntry(unsigned long int e_entry, unsigned char *e_ident);
-void close_Elf(int elf);
+void closeElf(int elf);
 
 /**
  * checkElf - Check if a file is an ELF file
