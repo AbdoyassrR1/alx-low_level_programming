@@ -301,7 +301,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	checkElf(h->e_ident);
 	printf("ELF Header:\n");
 	printMagic(h->e_ident);
-	print_Class(h->e_ident);
+	printClass(h->e_ident);
 	printData(h->e_ident);
 	printVersion(h->e_ident);
 	printOsabi(h->e_ident);
