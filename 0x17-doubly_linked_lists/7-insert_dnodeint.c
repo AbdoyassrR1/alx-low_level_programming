@@ -1,54 +1,66 @@
 #include "lists.h"
-
+#include <stdlib.h>
+#include <stdio.h>
 /**
 * insert_dnodeint_at_index - Inserts a new node at a given position
-* @h: ptr to a pointer to the head node of the list
-* @idx: index of the node to insert
-* @n: date to store in the new node
+* in a doubly linked list.
+* @h: pointer to a pointer to the head node of the list.
+* @idx: index of the node to insert.
+* @n: value to store in the new node.
 *
-* Return: ptr to the new node, otherwise NULL
+* Return: Pointer to the new node, or NULL if the operation fails.
 */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *curr = *h;
-	dlistint_t *temp;
-	unsigned int i = 0;
+	dlistint_t *current = *h;
+	dlistint_t *new;
+	unsigned int dist = 0;
 
-	temp = malloc(sizeof(dlistint_t));
-	if (temp == NULL)
+	new = malloc(sizeof(dlistint_t));
+	if (new == NULL)
 	{
 		return (NULL);
 	}
-	temp->n = n;
-	temp->prev = NULL;
-	temp->next = NULL;
+	new->n = n;
+	new->prev = NULL;
+	new->next = NULL;
+	/* Handle the case where the list is empty and idx > 0 */
 	if (*h == NULL && idx > 0)
 	{
-		free(temp);
+		free(new);
 		return (NULL);
 	}
+
+	/* Handle the case where the new node needs to be inserted at the beginning of the list */
 	if (idx == 0)
 	{
-		temp->next = *h;
+		/* Update the next pointer of the new node */
+		new->next = *h;
+		/* Update the prev pointer of the second node, if it exists */
 		if (*h != NULL)
 		{
-			(*h)->prev = temp;
+			(*h)->prev = new;
 		}
-		*h = temp;
-		return (temp);
+		/* Update the head pointer to point to the new node */
+		*h = new;
+		return (new);
 	}
-	while (curr != NULL && i < idx - 1)
+	/* Traverse the list to find the node before the insertion point */
+	while (current != NULL && dist < idx - 1)
 	{
-		i++;
-		curr = curr->next;
+		dist++;
+		current = current->next;
 	}
-	if (curr == NULL)
+	/* Handle the case where idx is out of bounds */
+	if (current == NULL)
 	{
-		free(temp);
+		free(new);
 		return (NULL);
 	}
-	temp->next = curr->next;
-	curr->next = temp;
-	temp->prev = curr;
-	return (temp);
+	/* Insert the new node at the specified index */
+	new->next = current->next;
+	current->next = new;
+	new->prev = current;
+	/* Return a pointer to the new node */
+	return (new);
 }
