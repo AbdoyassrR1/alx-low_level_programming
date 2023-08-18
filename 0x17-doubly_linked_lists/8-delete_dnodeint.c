@@ -19,7 +19,6 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		return (-1);
 	}
 
-	/* Handle deleting the first node */
 	if (index == 0)
 	{
 		*head = current->next;
@@ -31,20 +30,17 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		return (1);
 	}
 
-	/* Traverse the list to find the node before the deletion point */
 	while (current != NULL && dist < index - 1)
 	{
 		dist++;
 		current = current->next;
 	}
 
-	/* Handle deleting a node that doesn't exist */
 	if (current == NULL || current->next == NULL)
 	{
 		return (-1);
 	}
 
-	/* Delete the node at the specified index */
 	current->next = current->next->next;
 	if (current->next != NULL)
 	{
