@@ -10,7 +10,7 @@
 
 unsigned long int hash_djb2(const unsigned char *str)
 {
-    unsigned long int h;
+	unsigned long int h;
 	int count;
 
 	h = 5381;
