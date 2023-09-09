@@ -5,26 +5,26 @@
  * @size: The size of the array.
  *
  * Return: If an error occurs - NULL.
- *         Otherwise - a pointer to the new hash table.
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {
 	unsigned long int i = 0;
-	hash_table_t *ht = malloc(sizeof(hash_table_t));
+	hash_table_t *new_hash_table = malloc(sizeof(hash_table_t));
 
-	if (!ht)
+	if (!new_hash_table)
 		return (NULL);
-	ht->array = malloc(sizeof(hash_node_t **) * size);
-	if (!ht->array)
+	new_hash_table->array = malloc(sizeof(hash_node_t **) * size);
+	if (!new_hash_table->array)
 	{
-		free(ht);
+		free(new_hash_table);
 		return (NULL);
 	}
 	while (i < size)
 	{
-		ht->array[i] = NULL;
+		new_hash_table->array[i] = NULL;
 		i++;
 	}
-	ht->size = size;
-	return (ht);
+	new_hash_table->size = size;
+	return (new_hash_table);
+}
 }
