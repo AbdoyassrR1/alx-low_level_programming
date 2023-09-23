@@ -20,7 +20,7 @@ typedef struct listint_s
 
 void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
-
+void _swap(int *a, int *b);
 
 
 #endif /*SORT_H*/
