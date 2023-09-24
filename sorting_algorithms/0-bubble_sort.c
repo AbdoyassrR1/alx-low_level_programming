@@ -2,20 +2,6 @@
 
 
 /**
- * _swap - swap to element
- * @a: the first element
- * @b: the second element
- *
- * Return: no thing
-*/
-void swap_(int *a, int *b)
-{
-    int temp = *b;
-    *b = *a;
-    *a = temp;
-}
-
-/**
  * bubble_sort - bubble_sort algorithm that sort a arr of int
  * @array: the arr to sort
  * @size: size of that array
@@ -24,30 +10,27 @@ void swap_(int *a, int *b)
 */
 void bubble_sort(int *array, size_t size)
 {
-	int swapped = 0;
-	size_t i;
-	size_t j;
+	size_t i, j, size2 = size;
+	int tmp, f = 0;
 
 	if (array == NULL || size < 2)
+		return;
+	for (i = 0; i < size; i++)
 	{
-    	return;
-	}
-
-
-	for (i = 0; i < size - 1; i++)
-	{
-		for (j = 0; j < size - i - 1; j++)
+		for (j = 1; j < size2; j++)
 		{
-			if (array[j] > array[j + 1])
+			if (array[j - 1] > array[j])
 			{
-				swap_(&array[j], &array[j + 1]);
+				f = 1;
+				tmp = array[j];
+				array[j] = array[j - 1];
+				array[j - 1] = tmp;
 				print_array(array, size);
-				swapped++;
 			}
 		}
-		if (swapped == 0)
-        {
+		if (f == 0)
 			break;
-		}
+		f = 0;
+		size2--;
 	}
 }
