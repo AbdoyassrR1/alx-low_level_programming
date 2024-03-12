@@ -19,7 +19,7 @@ int binary_search(int *array, size_t size, int value)
 	{
 		return (-1);
 	}
-	for ( ; array[middle] != value; )
+	for ( ; low <= high; )
 	{
 		middle = (low + high) / 2;
 		print_arr_at_index(array, low, high);
@@ -38,7 +38,6 @@ int binary_search(int *array, size_t size, int value)
 	}
 	return (-1);
 }
-
 
 
 /**
@@ -67,5 +66,4 @@ void print_arr_at_index(int *array, int low, int high)
 		}
 	}
 	printf("\n");
-
 }
