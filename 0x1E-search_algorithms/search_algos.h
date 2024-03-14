@@ -1,6 +1,6 @@
 #ifndef SEARCH_ALGORITH
 #define SEARCH_ALGORITH
-
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 
