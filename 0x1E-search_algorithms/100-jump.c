@@ -29,7 +29,7 @@ int jump_search(int *array, size_t size, int value)
 		low = high;
 		high += jump;
 		printf("Value checked array[%ld] = [%ld]\n", low, low);
-		if (high > size -1)
+		if (high > size - 1)
 		{
 			high = size;
 		}
